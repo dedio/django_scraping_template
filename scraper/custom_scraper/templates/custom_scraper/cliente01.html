@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Cliente 01</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/cliente01.css' %}">
+    </head>
+    <body>
+        <div class="content container">
+            <div class="page-header">
+                <h1><a href="/">Cliente 01</h1></a>
+            </div>
+            <div class="">
+                {% for sitio in sitios %}
+                    <h2>{{sitio.fechahora}}</h2>
+                    <h2>{{sitio.descripcion}}</h2>
+                    <h2>{{sitio.lista}}</h2>
+                    <h2>{{sitio.nombre}}</h2>
+                    <a href={{ sitio.url }}><h3>{{sitio.titulo}}</h3></a>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
