@@ -4,5 +4,5 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
-        url(r'^cliente01/', views.cliente01),
+        url(r'^', views.cliente),
     ]
