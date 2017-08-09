@@ -1,35 +1,63 @@
 {% load staticfiles %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
-    <head>
-        <title>Cliente 01</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
-    </head>
-    <body>
-        <div id="pagewrap">
-            <div id="header">
-                <h1><a href="http://127.0.0.1:8000/cliente01/">Cliente 01</h1></a>
-            </div>
-            <div id="content">
-                <h2>Calendario</h2>
-                <form method="get">
-                <table>
-                    {{ form.as_table }}
-                    <tr><td><input class="submit" type="submit" value="Consulta"></td><td></td></tr>
-                </table>
-                </form>
-            </div>
-            <div id="content">
-                {% for sitio in sitios %}
-                    <h4>{{sitio.fechahora}}</h4>
-                    <h4>{{sitio.descripcion}}</h4>
-                    <h6>{{sitio.lista}}</h6>
-                    <h2>{{sitio.nombre}}</h2>
-                    <a href={{ sitio.url }}><h3>{{sitio.titulo}}</h3></a>
-                {% endfor %}
-            </div>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Cliente 01</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static '/css/skeleton.css' %}">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <h1><a href="http://127.0.0.1:8000/cliente01/">Cliente 01</h1></a>
+  </div>
+  <div class="container">
+    <h4>Búsqueda por fecha</h4>
+    <form method="get">
+    <table>
+        {{ form.as_table }}
+        <tr><td><input class="submit" type="submit" value="Consulta"></td><td></td></tr>
+    </table>
+    </form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!--<div class="one-half column" style="margin-top: 25%">-->
+        {% for sitio in sitios %}
+            <h4>{{sitio.fechahora}}</h4>
+            <h4>{{sitio.descripcion}}</h4>
+            <h6>{{sitio.lista}}</h6>
+            <h2>{{sitio.nombre}}</h2>
+            <a href={{ sitio.url }}><h5>{{sitio.titulo}}</h5></a>
+        {% endfor %}
+      </div><br />
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
 </html>
