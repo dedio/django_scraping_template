@@ -1,0 +1,35 @@
+body {
+    background: rgba(147,206,222,1);
+    background: -moz-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,206,222,1)), color-stop(41%, rgba(117,189,209,1)), color-stop(100%, rgba(73,165,191,1)));
+    background: -webkit-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -o-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: -ms-linear-gradient(left, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    background: linear-gradient(to right, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 41%, rgba(73,165,191,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#49a5bf', GradientType=1 );
+}
+.general {
+    display: table;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
+}
+.cabecera {
+    color: #ffffff;
+    font-size: 20pt;
+    text-decoration: none;
+}
+.nota {
+    background-color: white;
+    width: auto;
+    /*height: auto;*/
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    -webkit-box-shadow: 6px 7px 5px 7px rgba(0,0,0,0.36);
+    -moz-box-shadow: 6px 7px 5px 7px rgba(0,0,0,0.36);
+    box-shadow: 6px 7px 5px 7px rgba(0,0,0,0.36);
+}

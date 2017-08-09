@@ -1,0 +1,123 @@
+body {
+	/*font: 1em/150% Arial, Helvetica, sans-serif;*/
+    font-family: 'Lobster';
+    margin: 0; 
+    padding: 0; 
+    /*background: #ffffff url("image02.jpg") repeat-x 50% 50% / contain;*/
+    background: #ffffff url("image02.jpg");
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+}
+/*a {
+	color: #669;
+	texto-decoration: none;
+}*/
+a:hover {
+	texto-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+select {
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+/************************************************************************************
+ESTRUCTURA
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+#header {
+	height: 180px;
+}
+#content {
+	width: 948px;
+	float: auto;
+    text-indent: 0.5cm;
+}
+#sidebar {
+	width: 300px;
+	float: right;
+}
+#footer {
+	clear: both;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* para 980px o menos */
+@media screen and (max-width: 980px) {
+	
+	#pagewrap {
+		width: 94%;
+	}
+	#content {
+		width: 95%;
+	}
+	#sidebar {
+		width: 30%;
+	}
+    body {
+        background-image: url("image02.jpg");
+    }
+}
+
+/* para imagenes en 767px o menos */
+@media only screen and (max-width: 767px) {
+body {
+    background-image: url("image01.jpg");
+    }
+}
+
+/* para 700px o menos */
+@media screen and (max-width: 700px) {
+
+	#content {
+		width: auto;
+		float: none;
+	}
+	#sidebar {
+		width: auto;
+		float: none;
+	}
+    body {
+        background-image: url("image02.jpg");
+    }
+}
+
+/* para 480px o menos */
+@media screen and (max-width: 480px) {
+
+	#header {
+		height: auto;
+	}
+	h1 {
+		font-size: 24px;
+	}
+	#sidebar {
+		display: none;
+	}
+    body {
+        background-image: url("image02.jpg");
+    }
+}
+
+/* borde & guideline (puedes ignorarlo) */
+#content {
+	background: #FFFFFF;
+}
+#sidebar {
+	background: #f0efef;
+}
+#header, #content, #sidebar {
+	margin-bottom: 5px;
+}

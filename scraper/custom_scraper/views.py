@@ -9,6 +9,8 @@ def cliente(request):
     sitios = []
     form = Prueba(request.GET)
 
+    # Se fija si la solicitud corresponde con la de un cliente
+    # sino, muestra la página de error
     path = request.path
     path = path.replace('/', '')
     try:
