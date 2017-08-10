@@ -1,63 +1,45 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Cliente 01</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="{% static '/css/normalize.css' %}">
-  <link rel="stylesheet" href="{% static '/css/skeleton.css' %}">
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-</head>
-<body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <h1><a href="http://127.0.0.1:8000/cliente01/">Cliente 01</h1></a>
-  </div>
-  <div class="container">
-    <h4>Búsqueda por fecha</h4>
-    <form method="get">
-    <table>
-        {{ form.as_table }}
-        <tr><td><input class="submit" type="submit" value="Consulta"></td><td></td></tr>
-    </table>
-    </form>
-  </div>
-  <div class="container">
-    <div class="row">
-      <!--<div class="one-half column" style="margin-top: 25%">-->
-        {% for sitio in sitios %}
-            <h4>{{sitio.fechahora}}</h4>
-            <h4>{{sitio.descripcion}}</h4>
-            <h6>{{sitio.lista}}</h6>
-            <h2>{{sitio.nombre}}</h2>
-            <a href={{ sitio.url }}><h5>{{sitio.titulo}}</h5></a>
-        {% endfor %}
-      </div><br />
-    </div>
-  </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type='text/css'">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+        </script>
+        <style>
+            .title {
+            font-family: 'cursive', serif;
+            font-size: 30px;
+            color: #1E90FF;
+            }
+            h1 {
+            font-family: 'cursive', serif;
+            font-size: 45px;
+            color: #1E90FF;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a href="http://127.0.0.1:8000/cliente01/"><h1>Cliente 01</h1></a><br>
+            <h4>Búsqueda por fecha</h4>
+            <form method="get">
+            <table>
+                {{ form.as_table }}
+                <tr><td><input class="submit" type="submit" value="Consulta"></td><td></td></tr>
+            </table>
+            </form><br>
+            {% for sitio in sitios %}
+            <div>
+                <div class="title">{{sitio.nombre}}</div>
+                <h4>{{sitio.fechahora}}</h4>
+                <h4>{{sitio.descripcion}}</h4>
+                <h6>{{sitio.lista}}</h6>
+                <a href={{ sitio.url }}><h5>{{sitio.titulo}}</h5></a>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
 </html>
