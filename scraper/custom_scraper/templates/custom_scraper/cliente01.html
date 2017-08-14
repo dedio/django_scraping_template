@@ -7,27 +7,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href={% static '/css/responsive.css' %}>
+        <link rel="stylesheet" href={% static '/css/skeleton.css' %}>
     </head>
     <body>
+        <div class="cabecera">
+            <a href="http://127.0.0.1:8000/cliente01/"><h1>Cliente 01</h1></a>   
+        </div>
         <div class="container">
-            <a href="http://127.0.0.1:8000/cliente01/"><h1>Cliente 01</h1></a><br>
-            <section id="recipientcase">
-                <h3>Búsqueda por fecha</h3>
-                <form method="get">
-                    {{ form.as_p }}
-                    <input class="submit" type="submit" value="Consulta">
-                </form>
-            </section>
-            {% for sitio in sitios %}
-            <div>
+            <h3>Búsqueda por fecha</h3>
+            <form method="get">
+                {{ form.as_p }}
+                <input class="submit" type="submit" value="Consulta">
+            </form>
+        </div><br>
+        {% for sitio in sitios %}
+            <div class="container">
                 <h3>{{sitio.nombre}}</h3>
                 <h4>{{sitio.fechahora}}</h4>
                 <h4>{{sitio.descripcion}}</h4>
                 <h6>{{sitio.lista}}</h6>
                 <a href={{ sitio.url }}><h5>{{sitio.titulo}}</h5></a>
             </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </body>
 </html>
